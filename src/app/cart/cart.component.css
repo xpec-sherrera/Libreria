@@ -1,0 +1,40 @@
+.cuerpo{
+	margin-top: 30px;
+	font-family: Roboto Condensed, sans-serif;
+	color: #15203f;
+}
+.text-bold{
+	font-family: Roboto Condensed, sans-serif;
+}
+.text{
+	font-family: "Times New Roman", Times, serif;
+}
+.simple-text{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: #721c24;
+}
+hr.style-one{
+	border-color: #8b8d92;
+}
+.titulo-pag{
+	font-size: 24px;
+}
+.imagen{
+	width: 170px;
+	height: 260px;
+}
+.cart-fila{
+	margin-bottom: 20px;
+	margin-left: 0;
+}
+.titulo-libro{
+	color: #15203f;
+	font-size: 1.2em;
+}
+.subtitulos{
+	font-size: .9em;
+	font-weight: 400;
+	line-height: 1.2em;
+}

@@ -1,0 +1,90 @@
+<app-header></app-header>
+<div class="container cuerpo" style="margin-bottom: 20px;">
+	<div class="row">
+		<h2>Registro  <i class="fa fa-users" aria-hidden="true"></i>
+		</h2>
+	</div>
+	<hr>
+	<form [formGroup]="registerForm" #form="ngForm" (ngSubmit)="registerUser()">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputEmail4">*Email</label>
+				<input id="email" name="email" type="email" class="form-control text" id="inputEmail4" placeholder="Email" formControlName="email" required [ngClass]="{'alert-danger' : (registerForm.get('email').errors)  && form.submitted}">
+				<span class="simple-text" *ngIf="(registerForm.get('email').errors)  && form.submitted">El e-mail es inválido.</span>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputEmail4">*Confirmar e-mail</label>
+				<input id="confirmarEmail" name="confirmarEmail" type="email" class="form-control text" id="inputEmail5" placeholder="Email" formControlName="emailConfirm" required [ngClass]="{'alert-danger' : (((registerForm.get('emailConfirm').errors) || !((registerForm.get('email').value===registerForm.get('emailConfirm').value))) && form.submitted) }">
+				<span class="simple-text" *ngIf="(registerForm.get('emailConfirm').errors)  && form.submitted">El e-mail es inválido.</span>
+				<span class="simple-text" *ngIf="(!(registerForm.get('email').value===registerForm.get('emailConfirm').value) && form.submitted)">Los e-mails no coinciden.</span>
+			</div>
+		</div>
+<!--<div class="form-group">
+			<label for="inputAddress">*Dirección</label>
+			<input type="text" class="form-control text" id="inputAddress" placeholder="Carrera 51B #95C-79">
+
+		</div> -->
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputName text">*Nombres</label>
+				<input type="text" class="form-control text" id="inputCity" formControlName="nombre" required [ngClass]="{'alert-danger' : ((registerForm.get('nombre').errors) && form.submitted) }">
+				<span class="simple-text" *ngIf="((registerForm.get('nombre').errors) && form.submitted)">Debe proporcionar un nombre.</span>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputLastName text">*Apellidos</label>
+				<input type="text" class="form-control text" id="inputCity" formControlName="apellido" required [ngClass]="{'alert-danger' : ((registerForm.get('apellido').errors) && form.submitted) }">
+				<span class="simple-text" *ngIf="((registerForm.get('apellido').errors) && form.submitted)">Debe proporcionar un apellido.</span>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputType text">*Tipo de documento</label>
+				<select class="form-control text" id="sel1">
+					<option>CC</option>
+					<option>Pasaporte</option>
+					<option>Cédula de Extranjería</option>
+					<option>Tarjeta de Identidad</option>
+				</select>
+			</div>
+			
+			<div class="form-group col-md-6">
+				<label for="inputNumber text">*Número</label>
+				<input type="text" class="form-control text" id="inputCity" placeholder="19423****" formControlName="documento" required [ngClass]="{'alert-danger' : (registerForm.get('documento').errors)  && form.submitted}">
+				<span class="simple-text" *ngIf="(registerForm.get('documento').errors)  && form.submitted">Debe proporcionar un número de documento.</span>
+
+			</div>
+			
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="inputNumber text">*Dirección</label>
+				<input type="text" class="form-control text" id="inputCity" placeholder="Cra 46 #85B - 110" formControlName="direccion" [ngClass]="{'alert-danger' : (registerForm.get('direccion').errors && form.submitted)}">
+				<span class="simple-text" *ngIf="(registerForm.get('direccion').errors && form.submitted)">Debe proporcionar una dirección.</span>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputPassword4">*Contraseña</label>
+				<input type="password" class="form-control text" id="inputPassword4" placeholder="******" formControlName="contraseña" [ngClass]="{'alert-danger' : (registerForm.get('contraseña').errors && form.submitted)}">
+				<span class="simple-text" *ngIf="(registerForm.get('contraseña').errors && form.submitted)">La contraseña debe contener por lo menos 8 caracteres.</span>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputPassword4">*Confimar contraseña</label>
+				<input type="password" class="form-control text" id="inputPassword5" placeholder="******" formControlName="confirmarContraseña" [ngClass]="{'alert-danger' : (((registerForm.get('confirmarContraseña').errors) || !((registerForm.get('contraseña').value===registerForm.get('confirmarContraseña').value))) && form.submitted) }">
+				<span class="simple-text" *ngIf="(registerForm.get('confirmarContraseña').errors && form.submitted)">La contraseña debe contener por lo menos 9 caracteres.</span>
+				<span class="simple-text" *ngIf="(!((registerForm.get('contraseña').value===registerForm.get('confirmarContraseña').value)) && form.submitted)">Las contraseñas deben coincidir.</span>
+			</div>
+		</div>
+		<hr>
+		<div class="form-group">
+			<div class="form-check">
+				<label class="form-check-label" style="cursor:pointer">
+					<input class="form-check-input" type="checkbox" formControlName="checkbox"> Acepto los términos y condiciones.
+				</label>
+				<p><span class="simple-text" *ngIf="(registerForm.get('checkbox').errors && form.submitted)">Debe aceptar los términos y condiciones</span></p>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary" style="cursor:pointer">Sign in</button>
+	</form>
+</div>
+<app-footer></app-footer>

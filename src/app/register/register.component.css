@@ -1,0 +1,17 @@
+.cuerpo{
+	margin-top: 60px;
+	font-family: Roboto Condensed, sans-serif;
+	color: #15203f;
+}
+.text-bold{
+	font-family: Roboto Condensed, sans-serif;
+}
+.text{
+	font-family: "Times New Roman", Times, serif;
+}
+.simple-text{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: #721c24;
+}

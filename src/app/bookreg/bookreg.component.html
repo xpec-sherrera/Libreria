@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="container cuerpo" style="margin-bottom: 20px;">
+	<button type="button" id="fooClick" class="btn btn-primary" data-toggle="modal" data-target="#AutorModal" style="display: none;">Launch demo modal</button>
+	<div class="modal fade" tabindex="-1" role="dialog" id="AutorModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Autor</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>¿El autor no fue encontrado, desea crearlo?</p>
+				</div>
+				<div class="modal-footer">
+					<a href="/dashboard/addAutor"><button type="button" class="btn btn-primary" style="cursor: pointer;">Crear</button></a>
+					<button type="button" class="btn btn-secondary" style="cursor: pointer;" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<h2 class="text-center">Añadir libro  <i class="fa fa-book" aria-hidden="true"></i>
+		</h2>
+	</div>
+	<hr>
+	<form [formGroup]="bookForm" #form="ngForm" (ngSubmit)="registerBook()">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="nombre">*Nombre</label>
+				<input id="nombre" name="nombre" type="text" class="form-control text" id="inputNombre" placeholder="Necronomicón" formControlName="nombre">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="genero">*Genero</label>
+				<input id="genero" name="autor" type="text" class="form-control text" id="inputGenero" placeholder="Fantasía" formControlName="genero">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="editorial">*Editorial</label>
+				<input id="editorial" name="editorial" type="text" class="form-control text" id="inputEditorial" placeholder="Editorial" formControlName="editorial">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="autor">*Autor</label>
+				<input id="autor" name="autor" type="text" class="form-control text" id="inputAutor" placeholder="Oscar Wilde" formControlName="autor">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputPages text">*Número de Páginas</label>
+				<input type="text" class="form-control text" id="inputPaginas" placeholder="Ej: 142" formControlName="paginas">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputAmount text">*Cantidad</label>
+				<input type="text" class="form-control text" id="inputCantidad" placeholder="Ej: 425" formControlName="cantidad">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputIdiom text">*Idioma</label>
+				<input type="text" class="form-control text" id="inputIdioma" placeholder="Ej: Inglés" formControlName="idioma">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputPresent text">*Presentación</label>
+				<input type="text" class="form-control text" id="inputPresent" placeholder="Ej: Tapa Blanda" formControlName="presentacion">
+			</div>
+			
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputPath" style="padding-bottom: 0px; margin-bottom: 0px;">*Imagen</label>
+				<label for="file-upload" class="custom-file-upload" style="font-size: 50px; display: block; color: #007bff;">
+					<i class="fa fa-plus-circle" aria-hidden="true"></i>
+				</label>
+				<input id="file-upload" type="file">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputPrecio">*Precio</label>
+				<input type="text" class="form-control text" id="inputPrecio" placeholder="Ej: 50000" formControlName="precio">
+			</div>
+		</div>
+		<div class="form-row">
+			<label for="inputDescripcion">*Descripción</label>
+			<div class="form-group col-md-12">
+				<input type="text" class="form-control text" id="inputDescripcion" placeholder="" formControlName="descripcion">
+			</div>
+		</div>
+		<hr style="padding-top: 0px; margin-top:0px;">
+		<div class="row">
+			<button type="submit" class="btn btn-primary" style="cursor:pointer; width: 100%;">Finalizar</button>
+		</div>
+	</form>
+</div>
+<app-footer></app-footer>

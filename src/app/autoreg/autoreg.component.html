@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container cuerpo" id="modal" style="margin-bottom: 20px;">
+	<div class="text-center">
+		<h2 class="text-center">Añadir autor  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+		</h2>
+	</div>
+	<hr>
+	<form [formGroup]="autorForm" #form="ngForm" (ngSubmit)="registerAutor()">
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="nombre">*Nombre</label>
+				<input id="nombre" name="nombre" type="text" class="form-control text" id="inputNombre" placeholder="Gabriel José" formControlName="nombre">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="apellido">*Apellido</label>
+				<input id="apellido" name="apellido" type="text" class="form-control text" id="inputApellido" placeholder="García Márquez" formControlName="apellido">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputEdad">*Edad</label>
+				<input type="text" class="form-control text" id="inputEdad" placeholder="Ej: 45" formControlName="edad">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputNacionalidad">*Nacionalidad</label>
+				<input type="text" class="form-control text" id="inputNacionalidad" placeholder="Ej: Colombiano" formControlName="nacionalidad">
+			</div>
+		</div>
+		<hr style="padding-top: 0px; margin-top:0px;">
+		<div class="row">
+			<button type="submit" class="btn btn-primary" style="cursor:pointer; width: 100%;">Finalizar</button>
+		</div>
+	</form>
+</div>
+<app-footer></app-footer>

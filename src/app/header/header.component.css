@@ -1,0 +1,128 @@
+.img{
+	width:280px;
+	height: 90px;
+}
+.buscar{
+	font-size: 14px;
+	width:400px;
+}
+.btn-naranja{
+	cursor: pointer;
+	font-size: 14px;
+	background-color:#f86200;
+	color:white;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.btn-naranja:hover{
+	background-color: #bf4b00;
+}
+.navbar{
+	color:white;
+	background-color: black;
+}
+.header-top{
+	background-color: #1b2241;
+}
+.navdown{
+	background-color: black;
+	font-size: 90%;
+}
+
+ul.navbar-nav > li {
+	display: inline-block;
+}
+.color-green{
+	background-color: red;
+}
+.jumbo{
+	max-width: 900px;
+	height: auto;
+	width: auto; /* ie8 */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.personalizado{
+	background:none;
+	text-align: center;
+	text-decoration: none;
+	border: 1.5px solid #dd5e00;
+	margin-left: 6px;
+	margin-right: 6px;
+	color: #dd5e00;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	cursor: pointer;
+}
+.personalizado:hover{
+	border-color: transparent;
+}
+.personalizado:hover a{
+	color:#f87a18;
+}
+.personalizado a{
+	color: #dd5e00;
+}
+.banner{
+	height: 345px;
+	width: auto;
+}
+.vertical-alignment-helper {
+	display:table;
+	height: 100%;
+	width: 100%;
+	pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+	/* To center vertically */
+	display: table-cell;
+	vertical-align: middle;
+	pointer-events:none;
+}
+.modal-content {
+	width:inherit;
+	max-width:inherit;
+	height:inherit;
+	margin: 0 auto;
+	pointer-events: all;
+}
+.simple-text{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	color: #721c24;
+}
+.bold{
+	font-weight: bold;	
+}
+.texto-usuario{
+	font-size: 20px;
+	color: #dd5e00;
+}
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}
+.image-container {
+    position: relative;
+}
+.image-container > .after {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-family: 'Gentona Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.carrito{
+	display: inline-block;
+	vertical-align: center;
+	font-size: 25px;
+	margin-right: 10px;
+	color: #dd5e00;
+}
+.fuente{
+	position: absolute;
+	text-decoration: none;
+}

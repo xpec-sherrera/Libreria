@@ -1,0 +1,61 @@
+.verticalLine {
+	border-left: 2px solid #ff0000;
+}
+.cuerpo{
+	margin-top: 60px;
+	font-family: Roboto Condensed, sans-serif;
+	color: #15203f;
+}
+.text-bold{
+	font-family: Roboto Condensed, sans-serif;
+}
+.text{
+	font-family: "Times New Roman", Times, serif;
+}
+.simple-text{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: #721c24;
+}
+.btn-ico1--verde {
+	background-color: #52b402;
+	background: #52b402;
+	
+	color: #fff;
+}
+.btn-ico1 {
+	width: 100%;
+}
+.btn {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-family: 'robotocondensed-regular';
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	transition: all 100ms linear;
+}
+.btn {
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: Roboto Condensed, sans-serif;
+
+}
+.btn-ico1:hover{
+	background-color: #009b20;
+}

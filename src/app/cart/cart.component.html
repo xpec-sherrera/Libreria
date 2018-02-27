@@ -1,0 +1,38 @@
+<app-header></app-header>
+<section>
+	<div class="container-fluid cuerpo">
+		<div class="row" style="margin-left: 5%;">
+			<div class="col-sm-7">
+				<h1 class="titulo-pag">Carrito</h1>
+				<hr class="style-one">
+				<div *ngFor="let book of books;">
+					<div class="row cart-fila">
+						<div class="col-sm-2-auto">
+							<img style="margin-top: 40px;" class="imagen" src="/assets/images/books/{{book.rutaImagen}}">
+						</div>
+						<div class="col-sm-4">
+							<div style="margin-top: 35px;">
+								<a class="titulo-libro" routerLink="/checkout/cart">{{book.nombre}}</a>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<p>PRECIO</p>
+						</div>
+						<div class="col-sm-2">
+							<p>CANTIDAD</p>
+						</div>
+						<div class="col-sm-2-auto">
+							<p>g</p>
+							<p>g</p>
+						</div>
+					</div>
+					<hr class="style-one">
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<span>gg</span>
+			</div>
+		</div>
+	</div>
+</section>
+<app-footer></app-footer>

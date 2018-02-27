@@ -1,0 +1,30 @@
+.cuerpo{
+	margin-top: 60px;
+	font-family: Roboto Condensed, sans-serif;
+	color: #15203f;
+}
+.text-bold{
+	font-family: Roboto Condensed, sans-serif;
+}
+.text{
+	font-family: "Times New Roman", Times, serif;
+}
+.simple-text{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: #721c24;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+	border: none;
+	margin-top: 0px;
+	padding-top: 0px;
+    padding-left: 12px;
+    cursor: pointer;
+    width: 50px;
+    padding-bottom: 0px; 
+    margin-bottom: 0px;
+}

@@ -1,0 +1,109 @@
+<header>
+	<nav class="navbar navbar-static-top header-top" role="navigation">
+		<div class="container-fluid">
+			<div class="col-md-7">
+				<div class="navbar-header">
+					<a class="navbar-brand" routerLink="/"><img class="img" [src]="headerImagePath"></a>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="input-group">
+					<input class="form-control buscar" placeholder="Libro, ISBN, autor o editorial" aria-label="Buscar" type="text" list="search_values" [value]="search" (input)="searchData($event)">
+					<datalist id="search_values" size="5">
+						<option value="Internet Explorer"></option>
+						<option value="Firefox"></option>
+						<option value="Google Chrome"></option>
+						<option value="Opera"></option>
+						<option value="Safari"></option>
+					</datalist>
+					<span class="input-group-btn">
+						<button class="btn btn-naranja" type="button"><span class="fa fa-search" aria-hidden="true"></span> Buscar</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="vertical-alignment-helper">
+		<div class="modal-dialog vertical-align-center">
+			<div class="modal-content">
+				<div class="modal-header" style="background: #1b2241; color: white;">
+					<h5 class="modal-title">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer; color: white;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form [formGroup]="loginForm" #form="ngForm" (ngSubmit)="loginUser(loginModal)">
+						<div class="form-group">
+							<label for="inputEmail4">E-mail</label>
+							<input id="email" name="email" type="email" class="form-control text" id="emailModal" placeholder="ejemplo@algo.com" formControlName="email" [ngClass]="{'alert-danger':(loginForm.get('email').errors)  && form.submitted}">
+							<span class="simple-text" *ngIf="(loginForm.get('email').errors)  && form.submitted">El e-mail es inválido.</span>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword4">Contraseña</label>
+							<input type="password" class="form-control text" id="passwordModal" placeholder="*********" formControlName="contraseña" [ngClass]="{'alert-danger' : (loginForm.get('contraseña').errors && form.submitted)}">
+							<span class="simple-text" *ngIf="(loginForm.get('contraseña').errors && form.submitted)">La contraseña debe contener por lo menos 8 caracteres.</span>
+						</div>
+						<div class="modal-footer">
+							<span class="simple-text bold" style="margin-right: 143px;">{{description}}</span>
+							<button type="submit" class="btn btn-primary" style="cursor: pointer; background-color: #f86200; border-color: #f86200;">Login</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal" style="cursor: pointer;">Cerrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-expand-lg navdown">
+	<div class="container-fluid">
+		<div class="col-md-6">
+			<ul class="nav">
+				<li class="nav-item active">
+					<button class="personalizado" ><a class="nav-link" routerLink="#">Libros</a></button>
+				</li>
+				<li class="nav-item">
+					<button class="personalizado"><a class="nav-link" routerLink="#">Librerías</a></button>
+				</li>
+				<li class="nav-item">
+					<button class="personalizado"><a class="nav-link" routerLink="#">Promociones</a></button>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<div style="display: inline-block;" class="pull-right">
+				<!-- <div style="position: relative;">
+					<img src="/assets/images/header-ico-cart.png">
+					<div style="position: absolute;">gg</div>
+				</div> -->
+				<div style="position: relative; display: inline-block; margin-right: 10px;">
+					<a routerLink="/checkout/cart" style="text-decoration: none;">
+					<div class="image-container" style="display: inline-block;">
+						<img src="/assets/images/header-ico-cart.png">
+						<div class="after" style="color: black;">{{this.carrito.length()}}</div>
+					</div>
+				</a>
+				</div>
+				<div *ngIf="!(user.getUserLoggedIn())" style="display: inline-block;">
+					<ul class="nav">
+						<li class="nav-item active">
+							<button class="personalizado"><a class="nav-link" routerLink="register">Registrarse</a></button>
+						</li>
+						<li class="nav-item">
+							<button class="personalizado"><a class="nav-link" data-toggle="modal" data-target="#exampleModal">Iniciar Sesión</a></button>
+						</li>
+					</ul>
+				</div>
+				<div *ngIf="user.getUserLoggedIn()" style="display: inline-block; margin-right: 10px;">
+					<div *ngIf="user.getUser().tipo===0" style="display: inline-block;">
+						<button class="personalizado" style="margin-right: 10px;"><a class="nav-link" routerLink="/dashboard">Dashboard</a></button>
+					</div>
+					<button class="personalizado" style="margin-right: 10px;"><a class="nav-link" (click)="logout()" routerLink="/">Logout</a></button>
+					<p class="texto-usuario align-middle" style="display: inline-block; margin-top: 10px;">Hola, {{user.getUser().nombre}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
